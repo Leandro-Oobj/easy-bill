@@ -8,27 +8,24 @@
 <body>
 <div  class="card" >
     <div class="container" th:each="produto : ${produtos}">
-        <div class="card-header"><span th:text="${produto.nomeProduto}">nome:</span></div>
-
+        <div class="card-header" th:text="${produto.nomeProduto}">nome:</div>
         <div class="card-body">
             <div class="row">
                 <div class="col-6">
-                    <div>Preço:</div>
-                    <div>Preço promocional:</div>
-                    <div>Classe Fiscal:</div>
+                    <div>Preço: <span th:text="${produto.preco}"/></div>
+                    <div>Preço promocional: <span th:text="${produto.precoPromocional}"/></div>
+                    <div>Classe Fiscal: <span th:text="${produto.classeFiscal}"/></div>
                     <div>
-                        <textarea>Descrição></textarea>
+                        <textarea th:text="${produto.descricaoProduto}" >Descrição</textarea>
                     </div>
                 </div>
                 <div class="col-6">
                     <div>
-                        <img src="https://static3.tcdn.com.br/img/img_prod/460977/teste_100485_1_cbc226c7d23a19c784fb4752ffe61337.png">
+                        <img th:src="${produto.urlImagemProduto}" src="">
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
 </div>
 </body>

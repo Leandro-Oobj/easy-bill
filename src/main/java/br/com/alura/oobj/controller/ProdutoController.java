@@ -15,11 +15,11 @@ public class ProdutoController {
 
 
     @Autowired
-    private ProdutoRepository repository;
+    private ProdutoRepository produtoRepository;
 
     @GetMapping("/produto")
     public String produto(Model model){
-        List<Produto> produtos = repository.recuperaTodosOsProdutos();
+        List<Produto> produtos = produtoRepository.findAll();
         model.addAttribute("produtos", produtos);
         return "produto";
 
