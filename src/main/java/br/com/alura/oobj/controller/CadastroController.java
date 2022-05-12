@@ -22,7 +22,7 @@ public class CadastroController {
     @GetMapping("formulario")
     public String formulario(){
 
-        return "formulario/novo";
+        return "formulario";
     }
 
     @PostMapping("formulario/novo")
