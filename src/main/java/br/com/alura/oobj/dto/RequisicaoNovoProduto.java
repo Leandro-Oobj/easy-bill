@@ -2,17 +2,25 @@ package br.com.alura.oobj.dto;
 
 import br.com.alura.oobj.model.Produto;
 
-import javax.persistence.Column;
+import javax.validation.constraints.NotBlank;
 import java.math.BigDecimal;
 
-public class RequesicaoNovoProduto {
+public class RequisicaoNovoProduto {
 
-
+    @NotBlank
     private String nomeProduto;
+
+    @NotBlank
     private String descricaoProduto;
+
     private BigDecimal preco;
+
     private BigDecimal precoPromocional;
+
+    @NotBlank
     private String urlImagemProduto;
+
+    @NotBlank
     private String classeFiscal;
 
     public String getNomeProduto() {
