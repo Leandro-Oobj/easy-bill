@@ -54,4 +54,28 @@ public class Produto {
     public String getClasseFiscal() {
         return classeFiscal;
     }
+
+    public void setNomeProduto(String nomeProduto) {
+        this.nomeProduto = nomeProduto;
+    }
+
+    public void setDescricaoProduto(String descricaoProduto) {
+        this.descricaoProduto = descricaoProduto;
+    }
+
+    public void setPreco(BigDecimal preco) {
+        this.preco = preco;
+    }
+
+    public void setPrecoPromocional(BigDecimal precoPromocional) {
+        this.precoPromocional = precoPromocional;
+    }
+
+    public void setClasseFiscal(String classeFiscal) {
+        this.classeFiscal = classeFiscal;
+    }
+
+    public void setUrlImagemProduto(String urlImagemProduto) {
+        this.urlImagemProduto = urlImagemProduto;
+    }
 }
