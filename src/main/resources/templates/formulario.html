@@ -4,6 +4,11 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <title>formulario</title>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     </head>
     <body>
         <div class="container">
@@ -14,29 +19,54 @@
                 <form th:object="${requisicaoNovoProduto}" class="card-body" action="/formulario/novo" method="post" >
                     <div class="form-group">
                         <label for="nomeProduto">Nome:</label>
-                        <input th:field="*{nomeProduto}" type="text" class="form-control" id="nomeProduto" name="nomeProduto" placeholder="Nome do Produto">
+                        <input th:field="*{nomeProduto}" th:errorclass="is-valid" type="text" class="form-control is-invalid" id="nomeProduto" name="nomeProduto" placeholder="Nome do Produto">
+                        <small>Informe o nome do Produto</small>
+                        <div class="invalid-feedback" th:errors="*{nomeProduto}">
+                            erro nome do produto
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="descricao">Descrição</label>
-                        <textarea class="form-control" id="descricao" name="descricaoProduto" placeholder="Descrição"></textarea>
+                        <textarea th:field="*{descricaoProduto}" th:errorclass="is-valid" class="form-control is-invalid" id="descricao" name="descricaoProduto" placeholder="Descrição"></textarea>
+                        <small>Informe uma descrição do produto</small>
+                        <div class="invalid-feedback" th:errors="*{descricaoProduto}">
+                            erro descricao
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="preco">Preço</label>
-                        <input type="text" class="form-control" id="preco" name="preco" placeholder="Preço">
+                        <input th:field="*{preco}" th:errorclass="is-valid" type="text" class="form-control is-invalid" id="preco" name="preco" placeholder="Preço">
+                        <small>Informe o valor do Produto</small>
+                        <div class="invalid-feedback" th:errors="*{preco}">
+                            erro preco
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="precoPromocional">Preço Promocional</label>
-                        <input type="text" class="form-control" id="precoPromocional" name="precoPromocional" placeholder="Preço Promocional">
+                        <input th:field="*{precoPromocional}" th:errorclass="is-valid" type="text" class="form-control is-invalid" id="precoPromocional" name="precoPromocional" placeholder="Preço Promocional">
+                        <small>Informe o valor promocional do Produto</small>
+                        <div class="invalid-feedback" th:errors="*{precoPromocional}">
+                            erro preco promocional
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="urlImagem">Url da Imagem</label>
-                        <input type="text" class="form-control" id="urlImagem" name="urlImagemProduto" placeholder="Url da Imagem">
+                        <input th:field="*{urlImagemProduto}" th:errorclass="is-valid" type="text" class="form-control is-invalid" id="urlImagem" name="urlImagemProduto" placeholder="Url da Imagem">
+                        <small>Informe a url da imagem do Produto</small>
+                        <div class="invalid-feedback" th:errors="*{urlImagemProduto}">
+                            erro url
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="classeFiscal">Classe Fiscal</label>
-                        <input type="text" class="form-control" id="classeFiscal" name="classeFiscal" placeholder="Classe Fiscal">
+                        <input th:field="*{classeFiscal}" th:errorclass="is-valid" type="text" class="form-control is-invalid" onkeypress="$(this).mask('0000.00.00')" id="classeFiscal" name="classeFiscal" placeholder="Classe Fiscal">
+                        <small>Informe a classe fiscal do Produto</small>
+                        <div class="invalid-feedback" th:errors="*{classeFiscal}">
+                            erro url
+                        </div>
                     </div>
-                    <button type="submit">Cadastrar</button>
+                    <div><button type="submit">Cadastrar</button></div>
+
                 </form>
             </div>
         </div>

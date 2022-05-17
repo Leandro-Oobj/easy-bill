@@ -20,7 +20,7 @@ public class CadastroController {
 
 
     @GetMapping("formulario")
-    public String formulario(){
+    public String formulario(RequisicaoNovoProduto requisicao){
 
         return "formulario";
     }
