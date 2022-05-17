@@ -17,7 +17,7 @@ public class ProdutoController {
     @Autowired
     private ProdutoRepository produtoRepository;
 
-    @GetMapping("/produto")
+    @GetMapping("admin/produtos")
     public String produto(Model model){
         List<Produto> produtos = produtoRepository.findAll();
         model.addAttribute("produtos", produtos);

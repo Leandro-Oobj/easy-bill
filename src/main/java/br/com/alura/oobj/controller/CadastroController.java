@@ -20,15 +20,15 @@ public class CadastroController {
 
 
     @GetMapping("formulario")
-    public String formulario(RequisicaoNovoProduto requisicao){
+    public String formulario(RequisicaoNovoProduto requisicao) {
 
         return "formulario";
     }
 
     @PostMapping("formulario/novo")
-    public String novo (@Valid RequisicaoNovoProduto requisicao, BindingResult result){
+    public String novo(@Valid RequisicaoNovoProduto requisicao, BindingResult result) {
 
-        if(result.hasErrors()){
+        if (result.hasErrors()) {
             return "formulario";
         }
 

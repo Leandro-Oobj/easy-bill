@@ -17,7 +17,7 @@ public class APIController {
     private ProdutoRepository produtoRepository;
 
     @GetMapping("/api/produtos")
-    public List<ListagemProdutos> listandoProdutos(){
+    public List<ListagemProdutos> listandoProdutos() {
         List<Produto> produtos = produtoRepository.findAll();
 
         return ListagemProdutos.converter(produtos);
